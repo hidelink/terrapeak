@@ -1,0 +1,266 @@
+Crea una plataforma completa de gestión de entrenadores de running llamada "RunnerCoach" 
+(o similar) con la siguiente arquitectura:
+
+## DISEÑO Y BRANDING
+- Paleta de colores: Naranja principal (#FF6633 aproximadamente), blanco, gris oscuro, dorado/amarillo
+- Logo: ProTrail/RunnerCoach con diseño moderno (montaña + running)
+- Tipografía: Sans-serif moderna (tipo Inter, Poppins o similar)
+- Responsive design completo (móvil, tablet, desktop)
+
+## SECCIONES PÚBLICAS (Landing Page)
+
+### 1. NAVEGACIÓN HEADER
+- Logo clickeable que lleva a inicio
+- Links de navegación: Beneficios (#benefits), Coaches (#coaches), Eventos (#events)
+- Botón "Entrar" (lleva a login)
+- Botón destacado "Encontrar Coach" (lleva a registro)
+
+### 2. HERO SECTION
+- Título grande con palabras en colores: "CORRE." (blanco), "SUBE." (naranja), "VENCE." (amarillo)
+- Subtítulo: "Cada cima que conquistas, cada kilómetro que dueles, un coach te guía hacia tu mejor versión."
+- Dos botones: "ENCONTRAR MI COACH" (naranja) y "Ver cómo funciona" (outline)
+- Estadísticas destacadas: "2,500+ Runners entrenando" | "150+ Coaches expertos"
+- Fondo con gradiente y ondas decorativas (montañas oscuras superpuestas)
+
+### 3. SECCIÓN "RESULTADOS QUE IMPORTAN" (#benefits)
+- Título: "RESULTADOS QUE IMPORTAN"
+- Subtítulo: "No hablamos de funciones. Hablamos de lo que realmente quieres lograr."
+- 3 Cards con iconos y información:
+  
+  Card 1: "Mejora tus tiempos"
+  - Icono: reloj/cronómetro
+  - Descripción: "Entrenamientos personalizados que te llevan a romper tus marcas personales."
+  - Estadística: "-12 min promedio en maratón"
+  
+  Card 2: "Prevén lesiones"
+  - Icono: escudo
+  - Descripción: "Técnicas y progresión adecuada para que corras más y te lesiones menos."
+  - Estadística: "85% menos lesiones"
+  
+  Card 3: "Alcanza tus metas"
+  - Icono: target/objetivo
+  - Descripción: "Desde tu primer 5K hasta tu primera ultra, un coach te guía en cada paso."
+  - Estadística: "2,500+ metas alcanzadas"
+
+### 4. SECCIÓN "HISTORIAS DE ÉXITO" (#coaches)
+- Título: "RUNNERS COMO TÚ ALCANZANDO METAS"
+- Etiqueta small: "Historias de éxito"
+- 3 Testimonios en tarjetas (dark mode):
+  
+  Testimonio 1: María García
+  - Cita: "En 6 meses bajé 18 minutos mi tiempo en maratón. Mi coach entendió exactamente lo que necesitaba."
+  - Categoría: Maratonista
+  - Meta: Sub 3:30 Maratón
+  
+  Testimonio 2: Carlos Ruiz
+  - Cita: "Pasé de no poder correr 10km a completar mi primer ultra de 50km. Increíble transformación."
+  - Categoría: Trail Runner
+  - Meta: Ultra Trail 50K
+  
+  Testimonio 3: Ana Martínez
+  - Cita: "Nunca pensé que podría amar correr. Mi coach me enseñó a disfrutar cada kilómetro."
+  - Categoría: Running Principiante
+  - Meta: Primera Media Maratón
+
+- Estadísticas debajo:
+  "150+ Coaches certificados | 2,500+ Runners activos | 98% Satisfacción | 500+ Eventos"
+
+### 5. SECCIÓN "DE PRINCIPIANTE A FINISHER"
+- Etiqueta: "Simple y efectivo"
+- Título: "DE PRINCIPIANTE A FINISHER"
+- Descripción: "No importa tu nivel actual. Nuestros coaches diseñan un plan personalizado para llevarte exactamente donde quieres llegar."
+- 3 Pasos numerados:
+  1. Cuéntanos tu meta (¿5K? ¿Maratón? ¿Trail?)
+  2. Conecta con tu coach (Te asignamos el ideal para ti)
+  3. Entrena y mejora (Seguimiento personalizado)
+- Card de ejemplo "Plan Trail Running" con:
+  - Duración: 12 semanas
+  - Progreso: Semana 8/12
+  - Estadísticas: 124 km este mes, +15% mejora ritmo, 0 lesiones
+  - Logro destacado: ¡Nueva marca personal! 10K en 48:32
+- Botón: "Empezar ahora"
+
+### 6. SECCIÓN "ELIGE TU NIVEL" (#plans)
+- Título: "ELIGE TU NIVEL"
+- Subtítulo: "Planes diseñados para cada etapa de tu viaje como runner"
+- 2 Planes comparativos:
+
+  PLAN EQUIPO - $599.99 MXN/mes
+  - Seguimiento mensual
+  - Plan de entrenamiento básico
+  - Acceso a eventos locales
+  - Soporte por email
+  - Botón: "Elegir plan"
+
+  PLAN PERSONALIZADO - $1,199.99 MXN/mes
+  - Seguimiento diario
+  - Plan de entrenamiento ultra personalizado
+  - Acceso VIP a eventos exclusivos
+  - Soporte 24/7
+  - Análisis avanzado de rendimiento
+  - Consultas ilimitadas
+  - Sesiones de coaching en vivo
+  - Nutrición personalizada
+  - Preparación para competiciones
+  - Botón: "Empezar ahora" (más destacado)
+
+### 7. SECCIÓN "CORRE CON LA COMUNIDAD" (#events)
+- Título: "CORRE CON LA COMUNIDAD"
+- Etiqueta: "Próximas carreras"
+- Contenido: "Estamos preparando las mejores carreras y eventos para la comunidad. Regístrate para ser el primero en enterarte."
+- Botón: "Regístrate ahora"
+- Botón alternativo: "Ver todos"
+
+### 8. SECCIÓN CTA FINAL
+- Título grande: "TU MEJOR VERSIÓN TE ESTÁ ESPERANDO"
+- Descripción: "Cada kilómetro cuenta. Cada entrenamiento te acerca a tu meta. Un coach profesional puede ser la diferencia entre intentar y lograr."
+- Dos botones: "Encontrar mi coach" (naranja) | "Ya tengo cuenta" (outline)
+
+### 9. FOOTER
+- Logo RunnerCoach
+- Descripción: "Conectamos runners apasionados con coaches profesionales. Tu viaje hacia tus metas comienza aquí."
+- Secciones de links:
+  - Para Runners: Beneficios, Planes, Eventos
+  - Compañía: Sobre nosotros, Blog, Contacto
+  - Legal: Privacidad, Términos
+- Copyright: "Hecho de runners para runners"
+
+---
+
+## SISTEMA DE AUTENTICACIÓN
+
+### 1. PÁGINA DE LOGIN (/login)
+- Centrada, forma limpia
+- Logo RunnerCoach
+- Título: "Iniciar sesión"
+- Subtítulo: "Ingresa a tu cuenta para gestionar tus clientes y eventos"
+- Campos:
+  - Email (placeholder: tu@email.com)
+  - Contraseña
+- Botón: "Iniciar sesión" (naranja)
+- Separador "o"
+- Botón alternativo: "Continuar con Google"
+- Link: "¿No tienes cuenta? Regístrate aquí"
+
+### 2. PÁGINA DE REGISTRO (/register)
+- Centrada, forma limpia
+- Logo RunnerCoach
+- Título: "Crea tu cuenta"
+- Subtítulo: "Únete a la comunidad de runners y comienza tu viaje hacia tus metas"
+- Campos:
+  - Nombre (placeholder: Tu nombre)
+  - Email (placeholder: tu@email.com)
+  - Contraseña
+- Botón: "Registrarme" (naranja)
+- Separador "o"
+- Botón alternativo: "Continuar con Google"
+- Link: "¿Ya tienes cuenta? Inicia sesión aquí"
+
+---
+
+## PANEL DE ADMINISTRACIÓN (Dashboard)
+
+### ESTRUCTURA GENERAL
+- Sidebar izquierdo (255px) con navegación
+- Main content area con header superior
+- Dark theme para datos
+
+### MENÚ LATERAL
+1. Dashboard (default)
+2. Coaches
+3. Clientes
+4. Pagos
+5. Eventos
+6. Planes
+7. Configuración
+
+### 1. DASHBOARD
+- Título: "Panel de Administración"
+- Descripción: "Gestiona coaches, clientes, pagos y eventos de la plataforma"
+
+**Row 1 - Coaches:**
+- Card: Coaches Totales (número grande)
+- Card: Coaches Aprobados (número grande, verde)
+- Card: Coaches Pendientes (número grande, amarillo)
+
+**Row 2 - Clientes & Ingresos:**
+- Card: Clientes Totales (número grande)
+- Card: Clientes Sin Coach (número grande, naranja)
+- Card: Ingresos Totales (cantidad en MXN, verde)
+
+**Row 3 - Alertas:**
+- Card destacada (amarillo): Pagos Pendientes ($599.99 MXN) - clickeable
+
+**Row 4 - Accesos Rápidos & Alertas:**
+- Sección "Accesos Rápidos": Botones para Gestionar Coaches, Gestionar Clientes, Gestionar Pagos
+- Sección "Alertas": Alerta en rojo sobre pagos pendientes
+
+### 2. GESTIÓN DE COACHES (/admin/coaches)
+- Título: "Coaches"
+- Subtítulo: "Invita, aprueba y gestiona los coaches de la plataforma"
+- Botón destacado: "+ Generar Enlace de Coach"
+- Helper text: "Genera enlaces de registro para nuevos coaches"
+- Búsqueda: Input con placeholder "Buscar coaches..."
+- Filtro dropdown: "Todos", "Aprobados", "Pendientes"
+
+**Tabla de Coaches:**
+- Columnas: Nombre | Email | Estado | Fecha de Registro | Acciones
+- Datos de ejemplo:
+  - Claudia Alonso | - | Aprobado (verde) | 12/11/2025 | Pagos | + Enlace
+  - Cristina López | - | Aprobado | 12/11/2025 | Pagos | + Enlace
+  - Carmen Pérez | - | Aprobado | 12/11/2025 | Pagos | + Enlace
+
+### 3. GESTIÓN DE CLIENTES (/admin/clients)
+- Título: "Clientes"
+- Subtítulo: "Asigna clientes a coaches y gestiona sus relaciones"
+- Botón destacado: "🔗 Generar Enlace de Registro"
+- Búsqueda: Input con placeholder "Buscar clientes..."
+- Filtro dropdown: "Todos"
+
+**Tabla de Clientes:**
+- Columnas: Nombre | Email | Coach Asignado | Plan Activo | Estado | Acciones
+- Datos de ejemplo:
+  - obarboza+cliente | obarboza+cliente@cyborgdev.io | Claudia Alonso | Plan Equipo | ✓ | Acciones
+  - Sara Ortiz | sara.ortiz18@runnercoach.test | Claudia Alonso | Sin plan | ✓ | Acciones
+  - David Álvarez | david.alvarez16@runnercoach.test | Carmen Pérez | Sin plan | ✓ | Acciones
+  - [Más clientes...]
+
+### 4. GESTIÓN DE PAGOS (/admin/payments)
+- Título: "Pagos"
+- Subtítulo: "Aprueba pagos de clientes y gestiona pagos a coaches"
+
+**Tabs:**
+- "Pagos de Clientes" (activo)
+- "Pagos a Coaches"
+
+**En Pagos de Clientes:**
+- Card: Total Recaudado ($ verde) - $20,320.98 MXN
+- Card: Pagos Pendientes ($) - $599.99 MXN
+
+**Tabla de Transacciones:**
+- Columnas: Cliente | Coach | Monto | Fecha | Método | Acciones
+- Datos:
+  - Oscar Barboza (obarboza+cliente@cyborgdev.io) | Claudia Alonso | $599.99 MXN | 12/11/2025 | Transferencia | 📋
+  - Oscar Barboza | Claudia Hernández | $650.00 MXN | 12/11/2025 | Transferencia | 📋
+  - Miguel Ortiz | Claudia Hernández | $1,199.99 MXN | 12/11/2025 | Transferencia | -
+  - [Más transacciones...]
+
+### 5. GESTIÓN DE EVENTOS (/admin/events)
+- Título: "Eventos"
+- Subtítulo: "Crea y gestiona eventos"
+- Botón destacado: "+ Crear Evento"
+
+**Sección: "Eventos Pasados"**
+
+**Tabla de Eventos:**
+- Columnas: Nombre | Fecha | Ubicación | Inscritos | Acciones
+- Datos:
+  - Carrera Solidaria 06/2025 | June 15th, 2025 | Playa del Este | 0 | ✏️ Editar | 🗑️ Eliminar
+  - Ultra Trail 50K 10/2025 | October 20th, 2025 | Valle Verde | 0 | ✏️ Editar | 🗑️ Eliminar
+  - Carrera de Resistencia 11/2025 | November 27th, 2025 | Centro Deportivo | 5 | ✏️ Editar | 🗑️ Eliminar
+  - Ultra Backyard 2025 | December 12th, 2025 | La Soledad Bike Park, Zapopan, Jalisco | 9/250 | ✏️ Editar | 🗑️ Eliminar
+
+### 6. GESTIÓN DE PLANES (/admin/plans)
+- Título: "Planes"
+- Subtítulo: "Crea y gestiona los planes de suscripción disponibles para los clientes"
+- Botón destacado: "+ Nuevo Plan"
