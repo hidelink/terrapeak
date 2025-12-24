@@ -2,6 +2,13 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { MockBanner } from "../_components/mock-banner";
 import { deleteCoach, upsertCoach } from "./actions";
 
+type CoachRow = {
+  id?: string;
+  status?: string | null;
+  created_at?: string | null;
+  profile?: { name?: string | null; email?: string | null } | { name?: string | null; email?: string | null }[];
+};
+
 const fallbackCoaches = [
   {
     name: "Claudia Alonso",
@@ -35,14 +42,17 @@ async function getCoaches() {
       .order("created_at", { ascending: false });
     if (error) throw error;
     const mapped =
-      data?.map((c) => ({
-        id: c.id,
-        name: c.profile?.name ?? "Sin nombre",
-        email: c.profile?.email ?? "—",
-        status: c.status ?? "Pendiente",
-        date: c.created_at?.slice(0, 10) ?? "",
-        actions: "Pagos · + Enlace",
-      })) ?? [];
+      ((data ?? []) as CoachRow[]).map((c) => {
+        const prof = Array.isArray(c.profile) ? c.profile[0] : c.profile;
+        return {
+          id: c.id ?? "",
+          name: prof?.name ?? "Sin nombre",
+          email: prof?.email ?? "—",
+          status: c.status ?? "Pendiente",
+          date: c.created_at?.slice(0, 10) ?? "",
+          actions: "Pagos · + Enlace",
+        };
+      }) ?? [];
     return { items: mapped, usingMock: false };
   } catch {
     return {
