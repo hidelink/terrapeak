@@ -2,6 +2,16 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { MockBanner } from "../_components/mock-banner";
 import { deletePlan, upsertPlan } from "./actions";
 
+type PlanRow = {
+  id?: string;
+  name?: string | null;
+  price?: number | null;
+  currency?: string | null;
+  billing_period?: string | null;
+  features?: any;
+  is_featured?: boolean | null;
+};
+
 const fallbackPlans = [
   {
     name: "Plan Equipo",
@@ -43,14 +53,19 @@ async function getPlans() {
       .order("created_at", { ascending: true });
     if (error) throw error;
     const mapped =
-      data?.map((p) => ({
-        id: p.id,
-        name: p.name,
-        price: `$${Number(p.price || 0).toFixed(2)} ${p.currency ?? "MXN"}/${p.billing_period ?? "mes"}`,
-        features: p.features ?? [],
-        cta: p.is_featured ? "Empezar ahora" : "Elegir plan",
-        highlighted: Boolean(p.is_featured),
-      })) ?? [];
+      ((data ?? []) as PlanRow[]).map((p) => {
+        const features = Array.isArray(p.features)
+          ? p.features.filter((f): f is string => typeof f === "string")
+          : [];
+        return {
+          id: p.id ?? "",
+          name: p.name ?? "Sin nombre",
+          price: `$${Number(p.price || 0).toFixed(2)} ${p.currency ?? "MXN"}/${p.billing_period ?? "mes"}`,
+          features,
+          cta: p.is_featured ? "Empezar ahora" : "Elegir plan",
+          highlighted: Boolean(p.is_featured),
+        };
+      }) ?? [];
     return { items: mapped, usingMock: false };
   } catch {
     return {
