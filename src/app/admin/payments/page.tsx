@@ -2,6 +2,17 @@ import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { MockBanner } from "../_components/mock-banner";
 import { deletePayment, upsertPayment } from "./actions";
 
+type PaymentRow = {
+  id?: string;
+  amount?: number | null;
+  currency?: string | null;
+  method?: string | null;
+  status?: string | null;
+  paid_at?: string | null;
+  client?: { profile?: { name?: string | null; email?: string | null } | { name?: string | null; email?: string | null }[] } | null;
+  coach?: { profile?: { name?: string | null } | { name?: string | null }[] } | null;
+};
+
 const fallbackPayments = [
   {
     client: "Oscar Barboza",
@@ -40,15 +51,23 @@ async function getPayments() {
       .order("paid_at", { ascending: false });
     if (error) throw error;
     const mapped =
-      data?.map((p) => ({
-        id: p.id,
-        client: p.client?.profile?.name ?? "Sin nombre",
-        email: p.client?.profile?.email ?? "—",
-        coach: p.coach?.profile?.name ?? "Sin coach",
-        amount: `$${Number(p.amount || 0).toFixed(2)} ${p.currency ?? "MXN"}`,
-        date: p.paid_at?.slice(0, 10) ?? "",
-        method: p.method ?? "—",
-      })) ?? [];
+      ((data ?? []) as PaymentRow[]).map((p) => {
+        const clientProfile = Array.isArray(p.client?.profile)
+          ? p.client?.profile?.[0]
+          : p.client?.profile;
+        const coachProfile = Array.isArray(p.coach?.profile)
+          ? p.coach?.profile?.[0]
+          : p.coach?.profile;
+        return {
+          id: p.id ?? "",
+          client: clientProfile?.name ?? "Sin nombre",
+          email: clientProfile?.email ?? "—",
+          coach: coachProfile?.name ?? "Sin coach",
+          amount: `$${Number(p.amount || 0).toFixed(2)} ${p.currency ?? "MXN"}`,
+          date: p.paid_at?.slice(0, 10) ?? "",
+          method: p.method ?? "—",
+        };
+      }) ?? [];
     const total = data?.filter((p) => p.status === "pagado").reduce((acc, p) => acc + Number(p.amount || 0), 0) ?? 0;
     const pending = data?.filter((p) => p.status !== "pagado").reduce((acc, p) => acc + Number(p.amount || 0), 0) ?? 0;
     return { items: mapped, usingMock: false, totals: { total, pending } };
