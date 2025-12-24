@@ -79,10 +79,13 @@ async function getClientFormData() {
 
     return {
       coaches:
-        coaches?.map((c) => ({
-          id: c.id,
-          label: `${c.profile?.name ?? "Sin nombre"} · ${c.profile?.email ?? "—"}`,
-        })) ?? [],
+        (coaches ?? []).map((c: any) => {
+          const prof = Array.isArray(c.profile) ? c.profile[0] : c.profile;
+          return {
+            id: c.id ?? "",
+            label: `${prof?.name ?? "Sin nombre"} · ${prof?.email ?? "—"}`,
+          };
+        }) ?? [],
       plans:
         plans?.map((p) => ({
           id: p.id,
