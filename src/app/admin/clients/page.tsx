@@ -28,6 +28,14 @@ const fallbackClients = [
 
 type SelectOption = { id: string; label: string };
 
+type ClientRow = {
+  id: string;
+  status: string | null;
+  profile: { name?: string | null; email?: string | null } | null;
+  coach: { profile: { name?: string | null } | null } | null;
+  plan: { name?: string | null } | null;
+};
+
 async function getClients() {
   try {
     const supabase = await createSupabaseServerClient();
@@ -39,7 +47,7 @@ async function getClients() {
       .order("created_at", { ascending: false });
     if (error) throw error;
     const mapped =
-      data?.map((c) => ({
+      (data as ClientRow[] | null)?.map((c) => ({
         id: c.id,
         name: c.profile?.name ?? "Sin nombre",
         email: c.profile?.email ?? "—",
