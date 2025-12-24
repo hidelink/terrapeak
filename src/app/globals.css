@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --tp-primary: #ff6633;
+  --tp-primary-strong: #e65324;
+  --tp-accent: #f1a429;
+  --tp-foreground: #e8eaed;
+  --tp-base: #0b0f14;
+  --tp-surface: #111722;
+  --tp-muted: #9aa3b5;
+  --tp-border: #243043;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-base: var(--tp-base);
+  --color-base-foreground: var(--tp-foreground);
+  --color-surface: var(--tp-surface);
+  --color-surface-foreground: var(--tp-foreground);
+  --color-muted: var(--tp-muted);
+  --color-primary: var(--tp-primary);
+  --color-primary-foreground: #0f0f0f;
+  --color-accent: var(--tp-accent);
+  --color-border: var(--tp-border);
+  --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--tp-base);
+  color: var(--tp-foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--tp-primary) 60%, transparent);
+  color: #0b0f14;
 }
