@@ -21,24 +21,18 @@ export const createSupabaseServerClient = async () => {
   return createServerClient(url, anonKey, {
     cookies: {
       get(name) {
-        const getFn = (cookieStore as unknown as { get?: CallableFunction }).get;
-        if (typeof getFn !== "function") return undefined;
-        return getFn.call(cookieStore, name)?.value;
+        return cookieStore.get(name)?.value;
       },
       set(name, value, options) {
-        const setFn = (cookieStore as unknown as { set?: CallableFunction }).set;
-        if (typeof setFn !== "function") return;
         try {
-          setFn.call(cookieStore, name, value, options as CookieOptions);
+          cookieStore.set(name, value, options as CookieOptions);
         } catch {
           // In middleware/edge, cookies might be readonly; ignore.
         }
       },
       remove(name, options) {
-        const setFn = (cookieStore as unknown as { set?: CallableFunction }).set;
-        if (typeof setFn !== "function") return;
         try {
-          setFn.call(cookieStore, name, "", {
+          cookieStore.set(name, "", {
             ...(options as CookieOptions),
             maxAge: 0,
           });
